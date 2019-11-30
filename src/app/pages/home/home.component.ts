@@ -3,9 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'ngx-home',
   template: `
-  <p>
-    home works!
-  </p>
+    <router-outlet></router-outlet>
+    <p>Home page is working.</p>
   `,
 })
 export class HomeComponent implements OnInit {
