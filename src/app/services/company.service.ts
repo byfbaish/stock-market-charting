@@ -6,11 +6,12 @@ import { Company } from '../models/Copany';
   providedIn: 'root'
 })
 export class CompanyService {
-  private data: Company[] = [];
+  private data: Company[];
 
   constructor() { }
 
   getData(): Observable<Company[]> {
+    this.data = [];
     for (let i = 0; i < 10; i++) {
       let company = new Company();
       company.companyName = 'Company' + i;
