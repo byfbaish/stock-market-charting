@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
-import {
-
-} from '@nebular/theme';
+import { NbRouteTabsetModule } from '@nebular/theme';
 
 import { HomeComponent } from './home.component';
 import { ImportDataComponent } from './import-data/import-data.component';
@@ -13,6 +11,7 @@ import { UpdateIPODetailsComponent } from './update-ipodetails/update-ipodetails
 @NgModule({
   imports: [
     HomeRoutingModule,
+    NbRouteTabsetModule,
   ],
   declarations: [
     HomeComponent,
