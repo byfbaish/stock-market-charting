@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NbRouteTabsetModule, NbCardModule, NbTreeGridModule, NbIconModule, NbInputModule } from '@nebular/theme';
+import { NbRouteTabsetModule, NbCardModule, NbTreeGridModule, NbIconModule, NbInputModule, NbStepperModule, NbButtonModule } from '@nebular/theme';
 
 import { HomeComponent } from './home.component';
 import { ImportDataComponent } from './import-data/import-data.component';
@@ -20,6 +20,9 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     NbInputModule,
     ThemeModule,
     Ng2SmartTableModule,
+    NbStepperModule,
+    NbButtonModule,
+    NbInputModule,
   ],
   declarations: [
     HomeComponent,

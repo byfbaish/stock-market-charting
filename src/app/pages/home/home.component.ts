@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
       title: 'Update IPO Details',
       route: '/pages/home/update-ipo-details',
     },
-  ]
+  ];
 
   constructor() { }
 

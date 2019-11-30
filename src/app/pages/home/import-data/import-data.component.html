@@ -1,3 +1,72 @@
-<p>
-  import-data works!
-</p>
+<nb-stepper orientation="horizontal" #navigator>
+  <nb-step label="stepLabel">
+    <ng-template #1>
+      <div>
+        Upload
+      </div>
+    </ng-template>
+    <nb-card>
+      <nb-card-header>
+        Import Excel
+      </nb-card-header>
+
+      <nb-card-body>
+        <label class="search-label" for="search">Select Excel file to uploaded:</label>
+        <input nbInput class="upload-file" type="file" placeholder="Search...">
+        <button nbButton (click)="upload()">Upload</button><br>
+        <a target="_blank" href="#">Click here to download sample Excel file</a>
+      </nb-card-body>
+    </nb-card>
+    <button nbButton disabled (click)="changeStep(navigator, 'previous')">prev</button>
+    <button nbButton (click)="changeStep(navigator, 'next')">next</button>
+  </nb-step>
+  <nb-step label="stepLabel">
+    <ng-template #2>
+      <div>
+        Summary
+      </div>
+    </ng-template>
+    <nb-card>
+      <nb-card-header>
+        Summary of Upload
+      </nb-card-header>
+
+      <nb-card-body>
+        <div class="form-group row">
+          <label for="CompanyName" class="label col-sm-3 col-form-label">Company Name</label>
+          <div class="col-sm-9">
+            <label>{{info.companyName}}</label>
+          </div>
+        </div>
+      </nb-card-body>
+      <nb-card-body>
+        <div class="form-group row">
+          <label for="CompanyName" class="label col-sm-3 col-form-label">Company Name</label>
+          <div class="col-sm-9">
+            <label>{{info.stockExchange}}</label>
+          </div>
+        </div>
+      </nb-card-body>
+      <nb-card-body>
+        <div class="form-group row">
+          <label for="CompanyName" class="label col-sm-3 col-form-label">Company Name</label>
+          <div class="col-sm-9">
+            <label>{{info.records}}</label>
+          </div>
+        </div>
+      </nb-card-body>
+      <nb-card-body>
+        <div class="form-group row">
+          <div class="col-sm-6">
+            <label>{{info.startDate}}</label>
+          </div>
+          <div class="col-sm-6">
+            <label>{{info.endDate}}</label>
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+    <button nbButton (click)="changeStep(navigator, 'previous')">prev</button>
+    <button nbButton disabled (click)="changeStep(navigator, 'next')">next</button>
+  </nb-step>
+</nb-stepper>

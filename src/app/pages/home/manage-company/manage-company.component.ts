@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
-import { SmartTableData } from '../../../@core/data/smart-table';
 import { CompanyService } from '../../../services/company.service';
 
 @Component({
   selector: 'ngx-manage-company',
   templateUrl: './manage-company.component.html',
-  styleUrls: ['./manage-company.component.scss']
+  styleUrls: ['./manage-company.component.scss'],
 })
 export class ManageCompanyComponent implements OnInit {
 
