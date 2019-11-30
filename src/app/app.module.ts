@@ -20,6 +20,16 @@ import {
   NbToastrModule,
   NbWindowModule,
 } from '@nebular/theme';
+import { AuthGuard } from './guards/auth.guard';
+import { NbAuthModule, NbPasswordAuthStrategy, NbDummyAuthStrategy, NbDummyAuthStrategyOptions, NbAuthSimpleToken } from '@nebular/auth';
+
+const dummyAuthStrategyOptions = new NbDummyAuthStrategyOptions();
+dummyAuthStrategyOptions.name = 'email';
+dummyAuthStrategyOptions.token = {
+  class: NbAuthSimpleToken,
+};
+dummyAuthStrategyOptions.delay = 100;
+dummyAuthStrategyOptions.alwaysFail = false;
 
 @NgModule({
   declarations: [AppComponent],
@@ -41,6 +51,15 @@ import {
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
     }),
     CoreModule.forRoot(),
+    NbAuthModule.forRoot({
+      strategies: [
+        NbDummyAuthStrategy.setup(dummyAuthStrategyOptions),
+      ],
+      forms: {},
+    }),
+  ],
+  providers: [
+    AuthGuard,
   ],
   bootstrap: [AppComponent],
 })
